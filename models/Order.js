@@ -11,10 +11,7 @@ Order.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    customer_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    
     allergy: {
       type: DataTypes.STRING,
     },
@@ -23,6 +20,13 @@ Order.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+
+    status: {
+      type:  DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "New Order",
+    },
+
     dish_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -30,6 +34,31 @@ Order.init(
         key: 'id',
       },
     },
+
+    customer_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'customer',
+        key: 'id',
+      },
+    },
+
+    customer_name: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'customer',
+        key: 'name',
+      },
+    },
+
+    employee_id: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'employee',
+        key: 'id',
+      },
+    },
+
   },
   {
     sequelize,
