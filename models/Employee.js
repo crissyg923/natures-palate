@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Dish extends Model {}
+class Employee extends Model {}
 
-Dish.init(
+Employee.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,27 +12,18 @@ Dish.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    dish_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    
-    price: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-
-    allergy: {
-      type: DataTypes.STRING,
-    },
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'dish',
+    modelName: 'employee',
   }
 );
 
-module.exports = Dish;
+module.exports = Employee;
