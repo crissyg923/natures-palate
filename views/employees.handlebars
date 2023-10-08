@@ -1,0 +1,14 @@
+<h1>All Employees</h1>
+{{#each employees as |emplpoyee|}}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{employee.name}}</h5>
+    <ol class="card-text">
+        <li>{{ employee.position }}</li>
+        <li>{{ employee.address }}</li>
+        <li>{{ employee.user_id }}</li>
+    </ol>
+    <a href="#" class="btn btn-primary">Edit Dish</a>
+  </div>
+</div>
+{{/each}}

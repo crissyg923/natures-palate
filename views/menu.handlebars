@@ -1,22 +1,12 @@
-<h1>Orders:</h1>
-{{#each orders as |order|}}
-<div class="order-card">
-  <div class="order-card-header">
-    {{customer_name}}
-    {{order.time}}
-  </div>
+<h1>Current Menu:</h1>
+{{#each dishes as |dish|}}
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{dish.url}}" alt="{{ dish.name }}">
   <div class="card-body">
-      <ol>
-
-     {{#each dishes as |dish|}}
-        <li>
-            {{dish.name}}
-            {{dish.addons}}
-            {{dish.allergies}}
-        </li>
-      {{/each}}
-      
-      </ol>
-    
+    <h5 class="card-title">{{dish.name}}</h5>
+    <p class="card-text">{{ dish.description }}</p>
+    <a href="#" class="btn btn-primary">Edit Dish</a>
   </div>
 </div>
+{{/each}}
+

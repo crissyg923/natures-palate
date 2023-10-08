@@ -1,25 +1,28 @@
-<!-- This template and others are the exact same as before, but now we are using a db instead of hardcoded data -->
+<h1>Orders</h1>
 {{#each orders as |order|}}
-<div class="order-card">
-  <div class="order-card-header">
-    {{customer_name}}
-  </div>
-  <div class="card-body">
-    <p>
-      Orders:
-      <ol>
+<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+    <div class="card-header">{{ customer_name }} {{order.time}} </div>
 
+  <div class="card-body">
+
+    <ul>
      {{#each dishes as |dish|}}
-        <li>
+        <li class = "card-text">
             {{dish.time}}
             {{dish.name}}
             {{dish.addons}}
             {{dish.allergies}}
         </li>
       {{/each}}
-      
-      </ol>
-    </p>
+    </ul>
     
   </div>
 </div>
+
+{{!-- <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">{{ customer_name }}</div>
+  <div class="card-body">
+    <h5 class="card-title">Secondary card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div> --}}
