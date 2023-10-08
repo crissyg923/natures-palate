@@ -21,7 +21,7 @@ module.exports = { User, Project };*/
 
 Customer.hasMany(Order, {
   foreignKey: 'customer_id',
-  onDelete: 'NULL'//-------------------------need to verify this
+  onDelete: 'CASCADE'//-------------------------need to verify this
 });
 
 Order.belongsTo(Customer, {
@@ -31,7 +31,7 @@ Order.belongsTo(Customer, {
 
 Employee.hasMany(Order, {
   foreignKey: 'employee_id',
-  onDelete: 'NULL'//-------------------------need to verify this
+  onDelete: 'CASCADE'//-------------------------need to verify this
 });
 
 Order.belongsTo(Employee, {

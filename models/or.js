@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('your-sequelize-instance');
 
 class Order extends Model {}
 
@@ -8,31 +8,24 @@ Order.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
       autoIncrement: true,
+      primaryKey: true,
     },
-    
     allergy: {
       type: DataTypes.STRING,
     },
-    
-
     status: {
-      type:  DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "New Order",
+      defaultValue: 'New Order',
     },
-
     dish_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'dish',
         key: 'id',
       },
-      onDelete: 'SET NULL',
-      onUpdate: 'CASCADE',
     },
-
     customer_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -42,9 +35,6 @@ Order.init(
       onDelete: 'SET NULL',
       onUpdate: 'CASCADE',
     },
-
-    
-
     employee_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -54,14 +44,11 @@ Order.init(
       onDelete: 'SET NULL',
       onUpdate: 'CASCADE',
     },
-
   },
   {
     sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
     modelName: 'order',
+    timestamps: false,
   }
 );
 

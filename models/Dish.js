@@ -21,7 +21,7 @@ Dish.init(
       allowNull: false,
     },
 
-    allergy: {
+    dish_description: {
       type: DataTypes.STRING,
     },
   },
