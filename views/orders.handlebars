@@ -1,0 +1,28 @@
+<h1>Orders</h1>
+{{#each orders as |order|}}
+<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+    <div class="card-header">{{ customer_name }} {{order.time}} </div>
+
+  <div class="card-body">
+
+    <ul>
+     {{#each dishes as |dish|}}
+        <li class = "card-text">
+            {{dish.time}}
+            {{dish.name}}
+            {{dish.addons}}
+            {{dish.allergies}}
+        </li>
+      {{/each}}
+    </ul>
+    
+  </div>
+</div>
+
+{{!-- <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">{{ customer_name }}</div>
+  <div class="card-body">
+    <h5 class="card-title">Secondary card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div> --}}
