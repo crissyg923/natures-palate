@@ -37,5 +37,28 @@ body {
   border: 3px solid black;
   padding: 20px;
   text-align: center;
-  
+  margin-top: 15px;
+}
+
+.mainheader {
+  /* margin: 20px; */
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+.headertext {
+  padding: 10px;
+  margin: 20px;
+  font-size: 25px;
+}
+.footer {
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+.footertext {
+  padding: 10px;
+  margin: 5px;
+  font-size: 15px;
 }

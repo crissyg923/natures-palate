@@ -3,10 +3,13 @@
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="{{dish.url}}" alt="{{ dish.name }}">
   <div class="card-body">
-    <h5 class="card-title">{{dish.name}}</h5>
-    <p class="card-text">{{ dish.description }}</p>
+    <h5 class="card-title">{{dish.dish_name}}</h5>
+    <p class="card-text">{{ dish.price }} {{ dish.dish_description }}</p>
     <a href="#" class="btn btn-primary">Edit Dish</a>
+    <a href="#" class="btn btn-primary">Delete Dish</a>
   </div>
 </div>
 {{/each}}
+
+<a href="add-dish" class="btn btn-primary">Add a Dish</a>
 
