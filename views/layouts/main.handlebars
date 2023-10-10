@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-
+<header class="text-center">Nature's Palate Order Portal</header>
 <main class="container">
   <div class="row">
-    
+  {{#if loggedIn}}
     <div class="col-3">
       <div class="boxy">
         <button type="button" class="btn btn-dark btn-lg btn-block">Current Orders</button>
@@ -29,7 +29,7 @@
         <button type="button" class="btn btn-dark btn-lg btn-block">Menu</button>
       </div>
     </div>
-    
+  {{/if}}  
   <div class="col-9 h-100">
     <div class="boxy1">
       {{{body}}}
