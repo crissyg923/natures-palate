@@ -6,7 +6,7 @@
   <div class="card-body">
 
     <ul>
-     {{#each orderdishes.dish_id as |dish|}}
+     {{#each order.dishes as |dish|}}
         {{> dish-details}}
       {{/each}}
     </ul>
