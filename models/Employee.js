@@ -15,6 +15,21 @@ Employee.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    position:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    address:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [4],
+      },
     }
   },
   {
