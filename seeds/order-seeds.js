@@ -11,8 +11,8 @@ const orderData = [
   {
     allergy: 'Gluten',
     status: "New Order",
-    dish_id: 1,
-    customer_id: 1,
+    dish_id: 2,
+    customer_id: 2,
     employee_id: 1
   },
   
