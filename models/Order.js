@@ -23,15 +23,15 @@ Order.init(
       defaultValue: "New Order",
     },
 
-    dish_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'dish',
-        key: 'id',
-      },
-      onDelete: 'SET NULL',
-      onUpdate: 'CASCADE',
-    },
+    // dish_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'dish',
+    //     key: 'id',
+    //   },
+    //   onDelete: 'SET NULL',
+    //   onUpdate: 'CASCADE',
+    // },
 
     customer_id: {
       type: DataTypes.INTEGER,
