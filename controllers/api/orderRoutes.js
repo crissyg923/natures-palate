@@ -1,25 +1,26 @@
 const router = require('express').Router();
-const { Order, Dish} = require('../models');
+const { Order, Dish, OrderDish} = require('../../models');
 const withAuth = require('../../utils/auth')
 
 // GET all orders for orders.handlebars to render
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const orderData = await Order.findAll({
-      include: [
-        {
-          model: Dish,
-          attributes: ['dish_name', 'dish_description', 'dish_allergies'],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: OrderDish,
+      //     attributes: ['dish_id'],
+      //   },
+      // ],
     });
+   
 
     const orders = orderData.map((order) =>
       order.get({ plain: true })
     );
     res.render('orders', {
       orders,
-      loggedIn: req.session.loggedIn,
+      // loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);

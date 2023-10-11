@@ -1,21 +1,20 @@
 <h1>Orders</h1>
 {{#each orders as |order|}}
 <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-    <div class="card-header">{{ customer_name }}  {{order_time}} </div>
+    <div class="card-header">{{ order.id }}  {{order.allergy}} {{order.status}}</div>
 
   <div class="card-body">
 
-    <ul>
+    {{!-- <ul>
      {{#each order.dishes as |dish|}}
         {{> dish-details}}
-      {{/each}}
-    </ul>
-    {{!-- <ul>
-      <li></li>
+     {{/each}}
     </ul> --}}
+   
     
   </div>
 </div>
+{{/each}}
 
 {{!-- <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
   <div class="card-header">{{ customer_name }}</div>
