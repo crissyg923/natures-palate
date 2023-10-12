@@ -5,18 +5,8 @@ const Order = require('./Order');
 const Dish = require('./Dish');
 const OrderDish = require('./OrderDish');
 
-//const Project = require('./Project');
 
-/*User.hasMany(Project, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
-});
 
-Project.belongsTo(User, {
-  foreignKey: 'user_id'
-});
-
-module.exports = { User, Project };*/
 
 
 Customer.hasMany(Order, {
@@ -41,17 +31,19 @@ Order.belongsTo(Employee, {
 Order.belongsToMany(Dish, {
   through:{ 
     model: OrderDish,
-    foreignKey: 'order_id'},
-    as: 'manyOrders'
+    // foreignKey: 'order_id'
+  },
+    as: 'dishes'
 });
 
 
 Dish.belongsToMany(Order, {
   through: {
     model: OrderDish,
-    foreignKey: 'dish_id'
+    // foreignKey: 'dish_id'
    },
-   as: "manyDishes"
+   as: "orders"
 });
+
 
 module.exports = { Customer, Employee, Order, Dish, OrderDish };
