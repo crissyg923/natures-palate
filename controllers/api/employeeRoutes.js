@@ -4,14 +4,16 @@ const { Employee } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    console.log('Before database query');
+    console.log('Before database query 😊');
     const employeeData = await Employee.findAll({});
-    console.log('After database query');
+    console.log('After database query 💝, ', employeeData);
     // Serialize data so the template can read it
     const employees = employeeData.map((emp) => emp.get({ plain: true }));
 
     // Pass serialized data and session flag into template
+    console.log("Before rendering")
     res.render('employees',{ employees } );
+    console.log("template should be rendered")
     //res.json(employeeData);
   } catch (err) {
     console.log('Error:', err);

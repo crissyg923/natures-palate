@@ -38,10 +38,20 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(require('./controllers/homeRoutes.js'));
+//app.use(require('./controllers/homeRoutes.js'));
 
 app.use(routes);
 
+/* 
+Jimp.read("pic1.JPG", (err, lenna) => {
+  if (err) throw err;
+  lenna
+    .resize(56, 56) // resize
+    .quality(60) // set JPEG quality
+    .greyscale() // set greyscale
+    .write("./public/bw.jpg"); // save
+});
+ */
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
