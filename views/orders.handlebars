@@ -1,4 +1,5 @@
 <h1>Orders</h1>
+<div class="row">
 {{#each orders as |order|}}
 <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
     <div class="card-header">{{ order.id }}  {{order.allergy}} {{order.status}}</div>
@@ -18,10 +19,10 @@
 </section>
 
      {{/each}}
-    {{!-- </ul> --}}
+    
    
     
   </div>
 </div>
 {{/each}}
-
+</div>
