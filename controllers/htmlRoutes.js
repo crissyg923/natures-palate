@@ -21,7 +21,23 @@ router.get('/employees', async (req, res) => {
   
       // Pass serialized data and session flag into template
       console.log("Before rendering")
-      res.render('employees',{ employees, loggedIn:true } );
+      res.render('employees',{ employees, loggedIn:true, loggedIn:true } );
+      console.log("template should be rendered")
+      //res.json(employeeData);
+    } catch (err) {
+      console.log('Error:', err);
+      res.status(500).json(err);
+    }
+  });
+
+  router.get('/menu', async (req, res) => {
+    try {
+      
+      const dishData = await Dish.findAll();
+    
+      const dishes = dishData.map((dish) => dish.get({ plain: true }));
+
+      res.render('menu',{ loggedIn :true, dishes: dishes} );
       console.log("template should be rendered")
       //res.json(employeeData);
     } catch (err) {
