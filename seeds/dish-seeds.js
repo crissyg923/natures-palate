@@ -2,19 +2,22 @@ const { Dish } = require('../models');
 
 const dishData = [
   {
-    dish_name: 'Nutty Toast',
+    name: 'Nutty Toast',
+    description: 'qwerty',
+    allergies: 'Nuts',
     price: 2,
-    allergy: 'Nuts',
   },
   {
-    dish_name: 'Wheat Toast',
+    name: 'Wheat Toast',
+    description: 'qwerty',
+    allergies: 'Gluten',
     price: 3,
-    allergy: 'Gluten',
   },
   {
-    dish_name: 'Buddha Bowl',
+    name: 'Buddha Bowl',
+    description: 'qwerty',
+    allergies: 'None',
     price: 4,
-    allergy: 'None',
   },
 ];
 

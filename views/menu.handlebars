@@ -1,15 +1,52 @@
-<h1>Current Menu:</h1>
-{{#each dishes as |dish|}}
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{dish.url}}" alt="{{ dish.name }}">
-  <div class="card-body">
-    <h5 class="card-title">{{dish.dish_name}}</h5>
-    <p class="card-text">{{ dish.price }} {{ dish.dish_description }}</p>
-    <a href="#" class="btn btn-primary">Edit Dish</a>
-    <a href="#" class="btn btn-primary">Delete Dish</a>
-  </div>
-</div>
-{{/each}}
+<div class="row mt-4">
 
-<a href="add-dish" class="btn btn-primary">Add a Dish</a>
+  <div class="col-md-6 dish-list">
+    <h3>Current Dishes:</h3>
+
+    {{#each dishes as |dish|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{dish.name}}</h4>
+        <p>{{dish.description}}</p>
+        <p>{{dish.allergies}}</p>
+        <span class="dollar-amount">${{format_amount dish.price}}</span>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{dish.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+
+  <div class="col-md-6">
+    <h3>Create a New Dish:</h3>
+
+    <form class="form new-dish-form">
+      <div class="form-group">
+        <label for="dish-name">Name:</label>
+        <input class="form-input" type="text" id="dish-name" name="dish-name" />
+      </div>
+      <div class="form-group">
+        <label for="dish-desc">Description:</label>
+        <textarea class="form-input" id="dish-desc" name="dish-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="dish-aller">Allergies:</label>
+        <textarea class="form-input" id="dish-aller" name="dish-aller"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="dish-price">Price ($):</label>
+        <input class="form-input" type="number" id="dish-price" name="dish-price" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  
+</div>
+
+<script src="./js/menu.js"></script>
 
