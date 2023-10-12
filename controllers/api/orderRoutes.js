@@ -29,6 +29,17 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/neworder', async (req, res) => {
+  try {
+    const dishData = await Dish.findAll() => {
+        const dishes= dishData.map((dish) =>
+        dish.get({plain: true})
+        )
+    }
+    
+  }
+});
+
 router.post('/neworder', async (req, res) => {
   try {
     const newOrder = await Order.create({
