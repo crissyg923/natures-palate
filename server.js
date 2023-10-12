@@ -42,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-/* 
+
 Jimp.read("pic1.JPG", (err, lenna) => {
   if (err) throw err;
   lenna
@@ -51,7 +51,7 @@ Jimp.read("pic1.JPG", (err, lenna) => {
     .greyscale() // set greyscale
     .write("./public/bw.jpg"); // save
 });
- */
+
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
