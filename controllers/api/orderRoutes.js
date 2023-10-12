@@ -6,20 +6,21 @@ const withAuth = require('../../utils/auth')
 router.get('/', async (req, res) => {
   try {
     const orderData = await Order.findAll({
-      // include: [
-      //   {
-      //     model: OrderDish,
-      //     attributes: ['dish_id'],
-      //   },
-      // ],
-    });
+      include: [
+        {
+          model: Dish,
+          as: "dishes"
+        }
+  ]
+  
+ });
    
 
-    const orders = orderData.map((order) =>
-      order.get({ plain: true })
-    );
+    const orders = orderData.map((order) => order.get({ plain: true }));
+    // return res.json(orders)
     res.render('orders', {
       orders,
+      loggedIn: true,
       // loggedIn: req.session.loggedIn,
     });
   } catch (err) {
