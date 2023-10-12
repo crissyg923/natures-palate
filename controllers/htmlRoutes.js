@@ -20,7 +20,7 @@ router.get('/employees', async (req, res) => {
   
       // Pass serialized data and session flag into template
       console.log("Before rendering")
-      res.render('employees',{ employees } );
+      res.render('employees',{ employees, loggedIn:true } );
       console.log("template should be rendered")
       //res.json(employeeData);
     } catch (err) {
