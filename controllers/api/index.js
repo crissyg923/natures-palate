@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const orderRoutes = require('./orderRoutes');
-// const projectRoutes = require('./projectRoutes');
+const dishRoutes = require('./dishRoutes');
 
 router.use('/orders', orderRoutes);
-// router.use('/projects', projectRoutes);
+router.use('/dishes', dishRoutes);
 
 const employeeRoutes = require('./employeeRoutes');
 //router.use('/users', userRoutes);

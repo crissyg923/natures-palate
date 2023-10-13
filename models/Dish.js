@@ -11,18 +11,19 @@ Dish.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    dish_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    
+    description: {
+      type: DataTypes.STRING,
+    },
+    allergies: {
+      type: DataTypes.STRING,
+    },
     price: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.FLOAT,
       allowNull: false,
-    },
-
-    allergy: {
-      type: DataTypes.STRING,
     },
   },
   {
