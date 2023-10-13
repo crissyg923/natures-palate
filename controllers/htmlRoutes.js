@@ -21,6 +21,7 @@ router.get('/employees', async (req, res) => {
   
       // Pass serialized data and session flag into template
       console.log("Before rendering")
+
       res.render('employees',{ employees, loggedIn:true, loggedIn:true } );
       console.log("template should be rendered")
       //res.json(employeeData);
@@ -54,6 +55,7 @@ router.get('/employees', async (req, res) => {
       const dishes = dishData.map((dish) => dish.get({ plain: true }));
 
       res.render('menu',{ loggedIn :true, dishes: dishes} );
+
       console.log("template should be rendered")
       //res.json(employeeData);
     } catch (err) {
