@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Employee } = require('../models');
+const { e } = require('../models');
 const apiRoutes = require('./api');
 const {  Dish } = require('../models');
 const withAuth = require('../utils/auth');
@@ -30,14 +30,14 @@ router.get('/employees', withAuth, async (req, res) => {
       console.log(employeeData);
     
       // Serialize data so the template can read it
-      const employees = employeeData.map((emp) => emp.get({ plain: true }));
+      const es = eData.map((emp) => emp.get({ plain: true }));
   
       // Pass serialized data and session flag into template
      
       console.log(req.session);
       res.render('employees',{ employees, logged_in: req.session.logged_in  } );
-      console.log("Before rendering");
-      console.log("template should be rendered")
+      console.log("Before rendering")
+
       //res.json(employeeData);
     } catch (err) {
       console.log('Error:', err);
@@ -67,7 +67,7 @@ router.get('/employees', withAuth, async (req, res) => {
 
       res.render('menu',{ logged_in: req.session.logged_in, dishes: dishes} );
       console.log("template should be rendered")
-      //res.json(employeeData);
+      //res.json(eData);
     } catch (err) {
       console.log('Error:', err);
       res.status(500).json(err);
@@ -84,7 +84,7 @@ router.get('/employees', withAuth, async (req, res) => {
       res.render('menu',{ logged_in: req.session.logged_in, dishes: dishes} );
 
       console.log("template should be rendered")
-      //res.json(employeeData);
+      //res.json(eData);
     } catch (err) {
       console.log('Error:', err);
       res.status(500).json(err);

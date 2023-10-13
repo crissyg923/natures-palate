@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     // return res.json(orders)
     res.render('orders', {
       orders,
-      loggedIn: true,
+      logged_in: true,
       // loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -36,7 +36,7 @@ router.get('/neworder', async (req, res) => {
       const dishes = dishData.map((dish) => dish.get({ plain: true }));
       res.render('neworder', {
         dishes,
-        loggedIn: true,
+        logged_in: true,
       });
     });
 
@@ -49,7 +49,7 @@ router.post('/neworder', async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
 
       res.status(200).json(dbUserData);
     });
