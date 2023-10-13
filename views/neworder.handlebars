@@ -1,0 +1,24 @@
+<h1>Dishes</h1>
+<div class="row">
+{{#each dishes as |dish|}}
+<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+    <div class="card-header dishname">
+        {{ dish.dish_name }}
+        <input class="checkbox-dish" type="checkbox" value="{{dish.id}}">
+    </div>
+
+<div class="card-body">
+    <section class="card text-dark">
+        <header class="dish-price">{{ dish.price }}</header>
+
+        <div class="card-body dishallergy">
+            {{ dish.allergy }}
+        </div>
+    </section>  
+</div>
+</div>
+
+{{/each}}
+</div>
+
+<div class="orderbox"></div>
