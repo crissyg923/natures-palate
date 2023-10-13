@@ -36,8 +36,6 @@ router.get('/employees', async (req, res) => {
       res.render('employees',{ employees, logged_in: req.session.logged_in  } );
       console.log("Before rendering")
 
-      res.render('employees',{ employees, loggedIn:true, loggedIn:true } );
-      console.log("template should be rendered")
       //res.json(employeeData);
     } catch (err) {
       console.log('Error:', err);

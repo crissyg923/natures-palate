@@ -6,7 +6,6 @@ router.use('/orders', orderRoutes);
 router.use('/dishes', dishRoutes);
 
 const employeeRoutes = require('./employeeRoutes');
-router.use('/orders', orderRoutes);
 
 router.use('/employee', employeeRoutes);
 
