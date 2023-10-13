@@ -1,9 +1,9 @@
 const getUsers = async () => {
     try {
-      const response = await fetch('/html'); // Assuming the route in usersRouter.js is '/api/users'
+      const response = await fetch('/html'); 
       if (response.ok) {
         const users = await response.json();
-        console.log(users); // Do something with the fetched user data
+        console.log(users); 
       } else {
         console.log('Error:', response.statusText);
       }
