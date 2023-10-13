@@ -43,14 +43,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 
-Jimp.read("pic1.JPG", (err, lenna) => {
-  if (err) throw err;
-  lenna
-    .resize(56, 56) // resize
-    .quality(60) // set JPEG quality
-    .greyscale() // set greyscale
-    .write("./public/bw.jpg"); // save
-});
+// Jimp.read("pic1.JPG", (err, lenna) => {
+//   if (err) throw err;
+//   lenna
+//     .resize(56, 56) // resize
+//     .quality(60) // set JPEG quality
+//     .greyscale() // set greyscale
+//     .write("./public/bw.jpg"); // save
+// });
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));

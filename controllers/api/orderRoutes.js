@@ -30,15 +30,15 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/neworder', async (req, res) => {
-  try {
-    const dishData = await Dish.findAll() => {
-        const dishes= dishData.map((dish) =>
-        dish.get({plain: true})
-        )
-    }
-    
-  }
-});
+  const dishData = await Dish.findAll().catch((err) => { 
+      res.json(err);
+    });
+      const dishes = dishData.map((dish) => dish.get({ plain: true }));
+      res.render('neworder', {
+        dishes,
+        loggedIn: true,
+      });
+    });
 
 router.post('/neworder', async (req, res) => {
   try {
