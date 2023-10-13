@@ -1,7 +1,7 @@
 const router = require('express').Router();
-// const { Employee } = require('../models');
+const { Employee } = require('../models');
 const apiRoutes = require('./api');
-const { Employee, Dish } = require('../models');
+const { Dish } = require('../models');
 
 // GET route for getting all of the dishes that are on the menu
 router.get('/', async (req, res) => {
