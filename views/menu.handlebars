@@ -6,10 +6,10 @@
     {{#each dishes as |dish|}}
     <div class="row mb-2">
       <div class="col-md-8">
-      <h6><span class="label">Dish Name:</span> {{dish.name}}</h6>
-      <h6><span class="label">Description:</span> {{dish.description}}</h6>
-      <h6><span class="label">Allergies:</span> {{dish.allergies}}</h6>
-      <h6><span class="dollar-amount">Price: $</span>{{format_amount dish.price}}</h6>
+      <h6><span class="label"><b><u>Dish Name:</u></b></span> {{dish.name}}</h6>
+      <h6><span class="label"><b><u>Description:</u></b></span> {{dish.description}}</h6>
+      <h6><span class="label"><b><u>Allergies:</u></b></span> {{dish.allergies}}</h6>
+      <h6><span class="dollar-amount"><b><u>Price:</u></b> $</span>{{format_amount dish.price}}</h6>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-dark" data-id="{{dish.id}}">DELETE</button>

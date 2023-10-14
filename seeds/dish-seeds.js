@@ -3,21 +3,21 @@ const { Dish } = require('../models');
 const dishData = [
   {
     name: 'Nutty Toast',
-    description: 'qwerty',
+    description: 'Bread soaked in beaten eggs ',
     allergies: 'Nuts',
-    price: 2,
+    price: 14,
   },
   {
     name: 'Wheat Toast',
-    description: 'qwerty',
+    description: 'Bread that has been sliced and warmed via a close radiant heat source',
     allergies: 'Gluten',
-    price: 3,
+    price: 7,
   },
   {
     name: 'Buddha Bowl',
-    description: 'qwerty',
+    description: 'Quinoa, chickpeas and vegetables',
     allergies: 'None',
-    price: 4,
+    price: 18,
   },
 ];
 
