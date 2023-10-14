@@ -10,11 +10,11 @@ router.get('/', async (req, res) => {
   const imagePath2 = '/pic2.jpg';
   const imagePath3 = '/pic3.jpg';
   //console.log("SESSION:", req.session);
-  res.render('home', { imagePath1, imagePath2, imagePath3, logged_in: req.session.logged_in });
+  res.render('home', { imagePath1, imagePath2, imagePath3, logged_in: req.session.logged_in});
 });
 
 router.get('/signup', async (req, res) => {
-
+console.log(req.body);
   res.render('signup');
 });
 
