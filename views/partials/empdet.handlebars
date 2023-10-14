@@ -1,0 +1,24 @@
+<div class="card" style="width: 18rem;" onclick="openContainer(this)">
+  <div class="card-body">
+    <h5 class="card-title">{{employee.name}}</h5>
+    <div class="card-text closed">
+        <p>Position:  {{ employee.position }}</p>
+        <p>Address:  {{ employee.address }}</p>
+        
+    </div>
+    
+  </div>
+</div>
+
+
+<script>
+  function openContainer(container){
+    var details = container.firstElementChild.lastElementChild;
+    if (details.classList.contains('closed')){
+      details.classList.remove('closed')
+    }
+    else {
+      details.classList.add('closed')
+    }
+  }
+</script>
