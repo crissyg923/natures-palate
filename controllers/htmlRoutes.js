@@ -85,7 +85,7 @@ router.get('/employees', withAuth, async (req, res) => {
       res.render('menu',{ logged_in: req.session.logged_in, dishes: dishes} );
 
       console.log("template should be rendered")
-      
+      //res.json(eData);
     } catch (err) {
       console.log('Error:', err);
       res.status(500).json(err);

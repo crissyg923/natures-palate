@@ -48,7 +48,7 @@ app.use(routes);
  lenna
    .resize(356, 356) 
    .quality(60) 
-   .greyscale() 
+  //  .greyscale() 
     .write("./public/bw.jpg"); 
 }); 
 

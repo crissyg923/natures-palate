@@ -28,16 +28,22 @@
         <a type="button" id = "logout" class="btn btn-dark btn-lg btn-block">Logout</a>
       </div>
     </div>
-    
-    {{else}}
-        <a type="button" id = "login" class="btn btn-dark btn-lg btn-block" href="/login">Login</a>
-        <a type="button" id = "signup" class="btn btn-dark btn-lg btn-block" href="/signup">Sign-Up</a>
-  {{/if}}  
-  <div class="col-md-9 h-100">
+     <div class="col-md-9 h-100">
     <div class="boxy1">
       {{{body}}}
     </div>
   </div>
+    
+    {{else}}
+        <a type="button" id = "login" class="btn btn-dark btn-lg btn-block" href="/login">Login</a>
+        <a type="button" id = "signup" class="btn btn-dark btn-lg btn-block" href="/signup">Sign-Up</a>
+        <div class="col-sm-12 h-100">
+    <div class="boxy1">
+      {{{body}}}
+    </div>
+  </div>
+  {{/if}}  
+  
   </div>
 </main>
     
