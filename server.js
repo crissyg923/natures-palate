@@ -4,12 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
-<<<<<<< HEAD
 const Jimp = require("jimp");
-=======
-const Jimp = require('jimp')
-
->>>>>>> b31bcf89e3842b59f8b923bfe3273d5d471ab7f6
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -43,20 +38,19 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use(require('./controllers/homeRoutes.js'));
 const employeeRoutes = require('./controllers/api/employeeRoutes');
 app.use('/api', employeeRoutes);
 app.use(routes);
 
-
-// Jimp.read("pic1.JPG", (err, lenna) => {
-//   if (err) throw err;
-//   lenna
-//     .resize(56, 56) // resize
-//     .quality(60) // set JPEG quality
-//     .greyscale() // set greyscale
-//     .write("./public/bw.jpg"); // save
-// });
+//Using Jimp Package for getting black and white picture with required size at home page
+ Jimp.read("pic1.JPG", (err, lenna) => {
+ if (err) throw err;
+ lenna
+   .resize(356, 356) 
+   .quality(60) 
+   .greyscale() 
+    .write("./public/bw.jpg"); 
+}); 
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
