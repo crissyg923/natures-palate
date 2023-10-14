@@ -26,6 +26,6 @@ if(!getDishes.checked) {
   handleOrder(selectedDishes);
 };
 
-const handleNewOrder = () => {
+const handleOrder = (selectedDishes) => {
   const newOrder = 
 }
