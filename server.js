@@ -47,7 +47,6 @@ const employeeRoutes = require('./controllers/api/employeeRoutes');
 app.use('/api', employeeRoutes);
 app.use(routes);
 
-<<<<<<< HEAD
 //Using Jimp Package for getting black and white picture with required size at home page
  Jimp.read("pic1.JPG", (err, lenna) => {
  if (err) throw err;
@@ -57,17 +56,6 @@ app.use(routes);
    .greyscale() 
     .write("./public/bw.jpg"); 
 }); 
-=======
-
-Jimp.read("pic1.JPG", (err, lenna) => {
-  if (err) throw err;
-  lenna
-    .resize(56, 56) // resize
-    .quality(60) // set JPEG quality
-    .greyscale() // set greyscale
-    .write("./public/bw.jpg"); // save
-});
->>>>>>> bcecaaac0bdab7e13c491dd39311e81d41927fc8
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
