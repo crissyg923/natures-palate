@@ -1,1 +1,17 @@
 
+<h4>All Employees</h4>
+{{#each employees as |employee|}}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{employee.name}}</h5>
+    <div class="card-text">
+        <p>Position:  {{ employee.position }}</p>
+        <p>Address:  {{ employee.address }}</p>
+        
+    </div>
+    
+  </div>
+</div>
+{{/each}} 
+
+

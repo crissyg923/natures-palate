@@ -1,3 +1,5 @@
+//function for displaying employees 
+
 const getUsers = async () => {
     try {
       const response = await fetch('/html'); 
