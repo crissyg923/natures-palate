@@ -4,12 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
-<<<<<<< HEAD
 const Jimp = require("jimp");
-=======
-const Jimp = require('jimp')
-
->>>>>>> bcecaaac0bdab7e13c491dd39311e81d41927fc8
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
