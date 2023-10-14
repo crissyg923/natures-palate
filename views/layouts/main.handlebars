@@ -14,7 +14,7 @@
   {{#if logged_in}}
     <div class="col-sm-12 col-md-3">
       <div class="boxy p-3">
-        <button type="button" class="btn btn-dark btn-lg btn-block">Current Orders</button>
+        {{!-- <button type="button" class="btn btn-dark btn-lg btn-block">Current Orders</button> --}}
       </div>
       <div class="boxy p-3">
         <!--<button type="button" class="btn btn-dark btn-lg btn-block">Employees</button>-->
@@ -28,17 +28,35 @@
         <a type="button" id = "logout" class="btn btn-dark btn-lg btn-block">Logout</a>
       </div>
     </div>
-    
-    {{else}}
-        <a type="button" id = "login" class="btn btn-dark btn-lg btn-block" href="/login">Login</a>
-        <a type="button" id = "signup" class="btn btn-dark btn-lg btn-block" href="/signup">Sign-Up</a>
-  {{/if}}  
-  <div class="col-md-9 h-100">
+     <div class="col-md-9 h-100">
     <div class="boxy1">
       {{{body}}}
     </div>
   </div>
+    
+    {{else}}
+   
+  <div class="text-center col-sm-12">
+      <div class="p-3">
+        <a type="button" id = "login" class="btn btn-dark btn-lg btn-block" href="/login">Login</a>
+      </div>
   </div>
+
+  <div class="text-center">
+      <div class="p-3">
+        <a type="button" id = "signup" class="btn btn-dark btn-lg btn-block" href="/signup">Sign-Up</a>
+      </div>
+  </div>
+    
+    
+  <div class="col-sm-12 h-100">
+    <div class="boxy1">
+      {{{body}}}
+    </div>
+  </div>
+  {{/if}}  
+  
+</div>
 </main>
     
 </body>

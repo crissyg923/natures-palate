@@ -6,9 +6,11 @@ const withAuth = require('../utils/auth');
 
 // GET route for getting all of the dishes that are on the menu
 router.get('/', async (req, res) => {
-  const imagePath = '/bw.jpg';
+  const imagePath1 = '/pic4.jpg';
+  const imagePath2 = '/pic2.jpg';
+  const imagePath3 = '/pic3.jpg';
   //console.log("SESSION:", req.session);
-  res.render('home', { imagePath, logged_in: req.session.logged_in });
+  res.render('home', { imagePath1, imagePath2, imagePath3, logged_in: req.session.logged_in });
 });
 
 router.get('/signup', async (req, res) => {
@@ -36,8 +38,9 @@ router.get('/employees', withAuth, async (req, res) => {
      
       console.log(req.session);
       res.render('employees',{ employees, logged_in: req.session.logged_in  } );
-      console.log("Before rendering");
+      console.log("Before rendering")
       console.log("template should be rendered")
+
       //res.json(employeeData);
     } catch (err) {
       console.log('Error:', err);
@@ -67,7 +70,7 @@ router.get('/employees', withAuth, async (req, res) => {
 
       res.render('menu',{ logged_in: req.session.logged_in, dishes: dishes} );
       console.log("template should be rendered")
-      //res.json(employeeData);
+      //res.json(eData);
     } catch (err) {
       console.log('Error:', err);
       res.status(500).json(err);
@@ -84,7 +87,7 @@ router.get('/employees', withAuth, async (req, res) => {
       res.render('menu',{ logged_in: req.session.logged_in, dishes: dishes} );
 
       console.log("template should be rendered")
-      //res.json(employeeData);
+      //res.json(eData);
     } catch (err) {
       console.log('Error:', err);
       res.status(500).json(err);

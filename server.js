@@ -46,11 +46,35 @@ app.use(routes);
  Jimp.read("pic1.JPG", (err, lenna) => {
  if (err) throw err;
  lenna
-   .resize(356, 356) 
+   .resize(290, 220) 
    .quality(60) 
-   .greyscale() 
-    .write("./public/bw.jpg"); 
+  //  .greyscale() 
+    .write("./public/pic1.jpg"); 
 }); 
+Jimp.read("pic2.JPG", (err, lenna) => {
+  if (err) throw err;
+  lenna
+    .resize(290, 220) 
+    .quality(60) 
+   //  .greyscale() 
+     .write("./public/pic2.jpg"); 
+ }); 
+ Jimp.read("pic3.JPG", (err, lenna) => {
+  if (err) throw err;
+  lenna
+    .resize(290, 220) 
+    .quality(60) 
+   //  .greyscale() 
+     .write("./public/pic3.jpg"); 
+ }); 
+ Jimp.read("pic4.JPG", (err, lenna) => {
+  if (err) throw err;
+  lenna
+    .resize(290, 220) 
+    .quality(60) 
+   //  .greyscale() 
+     .write("./public/pic4.jpg"); 
+ }); 
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));

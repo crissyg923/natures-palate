@@ -12,9 +12,20 @@ if (window.location.pathname === '/orders/neworder') {
   orderBox = document.querySelector('.orderbox');
 }
 
+
+
 var selectedDishes=[];
 
 function getOrder() {
 var getDishes=document.querySelectorAll('checkbox-dish');
-if(getDishes.checked)
+for (var i=0; i<getDishes.length; i++) 
+if(!getDishes.checked) {
+  throw new Error('No items selected!');
+}
+  selectedDishes.push(getDishes);
+  handleOrder(selectedDishes);
+};
+
+const handleOrder = (selectedDishes) => {
+  const newOrder = 
 }
