@@ -26,6 +26,7 @@ const signupFormHandler = async (event) => {
       });
   
       if (response.ok) {
+        
         document.location.replace('/login');
       } else {
         console.log('Error response:', response); 
