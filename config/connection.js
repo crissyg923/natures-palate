@@ -13,7 +13,7 @@ if (process.env.NP_DB) {
     {
       host: 'localhost',
       dialect: 'mysql',
-      port: 3306
+      port: 80
     }
   );
 }
