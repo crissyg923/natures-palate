@@ -1,51 +1,53 @@
 <div class="row mt-4">
-
+  
   <div class="col-md-6 dish-list">
     <h3>Current Dishes:</h3>
-
+    <br>
     {{#each dishes as |dish|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4>{{dish.name}}</h4>
-        <p>{{dish.description}}</p>
-        <p>{{dish.allergies}}</p>
-        <span class="dollar-amount">${{format_amount dish.price}}</span>
+      <h6><span class="label">Dish Name:</span> {{dish.name}}</h6>
+      <h6><span class="label">Description:</span> {{dish.description}}</h6>
+      <h6><span class="label">Allergies:</span> {{dish.allergies}}</h6>
+      <h6><span class="dollar-amount">Price: $</span>{{format_amount dish.price}}</h6>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{dish.id}}">DELETE</button>
+        <button class="btn btn-sm btn-dark" data-id="{{dish.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
   </div>
 
-
   <div class="col-md-6">
     <h3>Create a New Dish:</h3>
-
+    <br>
     <form class="form new-dish-form">
       <div class="form-group">
         <label for="dish-name">Name:</label>
-        <input class="form-input" type="text" id="dish-name" name="dish-name" />
+        <input class="form-input w-75" type="text" id="dish-name" name="dish-name" />
       </div>
+      <br>
       <div class="form-group">
-        <label for="dish-desc">Description:</label>
-        <textarea class="form-input" id="dish-desc" name="dish-desc"></textarea>
+        <label for="dish-desc">Descr.:</label>
+        <input class="form-input w-75"  type="text" id="dish-desc" name="dish-desc">
       </div>
+        <br>
       <div class="form-group">
-        <label for="dish-aller">Allergies:</label>
-        <textarea class="form-input" id="dish-aller" name="dish-aller"></textarea>
+        <label for="dish-aller">Allergy:</label>
+        <input class="form-input w-75" type="text" id="dish-aller" name="dish-aller">
       </div>
+        <br>
       <div class="form-group">
-        <label for="dish-price">Price ($):</label>
-        <input class="form-input" type="number" id="dish-price" name="dish-price" />
+        <label for="dish-price">Price: $</label>
+        <input class="form-input w-75" type="number" id="dish-price" name="dish-price" />
       </div>
+        <br>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-med btn-dark">Create</button>
       </div>
     </form>
   </div>
 
-  
 </div>
 
 <script src="./js/menu.js"></script>
