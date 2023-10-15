@@ -9,7 +9,7 @@ const orderdishData = [
   },
   {
     
-    dish_id: 1,
+    dish_id: 2,
     order_id: 2,
   },
   

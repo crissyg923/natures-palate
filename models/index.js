@@ -31,7 +31,7 @@ Order.belongsTo(Employee, {
 Order.belongsToMany(Dish, {
   through:{ 
     model: OrderDish,
-    // foreignKey: 'order_id'
+    foreignKey: 'order_id'
   },
     as: 'dishes'
 });
@@ -40,7 +40,7 @@ Order.belongsToMany(Dish, {
 Dish.belongsToMany(Order, {
   through: {
     model: OrderDish,
-    // foreignKey: 'dish_id'
+    foreignKey: 'dish_id'
    },
    as: "orders"
 });

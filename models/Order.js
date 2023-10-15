@@ -15,7 +15,10 @@ Order.init(
     allergy: {
       type: DataTypes.STRING,
     },
-    
+
+    customer_name: {
+      type:  DataTypes.STRING,
+    },
 
     status: {
       type:  DataTypes.STRING,
