@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Order, Dish, OrderDish} = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const orderData = await Order.findAll({
       include: [
@@ -21,7 +21,6 @@ router.get('/', async (req, res) => {
     res.render('orders', {
       orders,
       logged_in: req.session.logged_in,
-      // loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);
