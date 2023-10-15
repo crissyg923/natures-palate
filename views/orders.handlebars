@@ -2,18 +2,18 @@
 <div class="row">
 {{#each orders as |order|}}
 <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-    <div class="card-header">{{ order.id }}  {{order.allergy}} {{order.status}}</div>
+    <div class="card-header">{{ order.id }} {{order.status}}</div>
 
   <div class="card-body">
 
     
      {{#each order.dishes as |dish|}}
     <section class="card text-dark">
-    <header>{{ dish.dish_name }}</header>
+    <header>{{ dish.name }}</header>
 
     <div class="card-body">
-      {{ dish.price }}
-      {{ dish.allergy }}
+      ${{ format_amount dish.price }}
+      <p>Contains: {{ dish.allergies }}</p>
     </div>
   
 </section>
