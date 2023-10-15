@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Order, Dish, OrderDish} = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// GET all orders for orders.handlebars to render
 router.get('/', async (req, res) => {
   try {
     const orderData = await Order.findAll({
@@ -10,7 +9,8 @@ router.get('/', async (req, res) => {
         {
           model: Dish,
           as: "dishes"
-        }
+        },
+         
   ]
   
  });
@@ -28,6 +28,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 router.get('/neworder', async (req, res) => {
   const dishData = await Dish.findAll().catch((err) => { 

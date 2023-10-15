@@ -3,6 +3,7 @@ const { Order } = require('../models');
 const orderData = [
   {
     allergy: 'Nuts',
+    customer_name: 'Joey',
     status: "New Order",
     dish_id: 1,
     customer_id: 1,
@@ -10,6 +11,7 @@ const orderData = [
   },
   {
     allergy: 'Gluten',
+    customer_name: 'Mellissa',
     status: "New Order",
     dish_id: 2,
     customer_id: 2,
