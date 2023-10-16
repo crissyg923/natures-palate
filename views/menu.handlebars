@@ -1,15 +1,15 @@
 <div class="row mt-4">
-  
+
   <div class="col-md-6 dish-list">
     <h3>Current Dishes:</h3>
     <br>
     {{#each dishes as |dish|}}
     <div class="row mb-2">
       <div class="col-md-8">
-      <h6><span class="label"><b><u>Dish Name:</u></b></span> {{dish.name}}</h6>
-      <h6><span class="label"><b><u>Description:</u></b></span> {{dish.description}}</h6>
-      <h6><span class="label"><b><u>Allergies:</u></b></span> {{dish.allergies}}</h6>
-      <h6><span class="dollar-amount"><b><u>Price:</u></b> $</span>{{format_amount dish.price}}</h6>
+        <h6><span class="label"><b><u>Dish Name:</u></b></span> {{dish.name}}</h6>
+        <h6><span class="label"><b><u>Description:</u></b></span> {{dish.description}}</h6>
+        <h6><span class="label"><b><u>Allergies:</u></b></span> {{dish.allergies}}</h6>
+        <h6><span class="dollar-amount"><b><u>Price:</u></b> $</span>{{format_amount dish.price}}</h6>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-dark" data-id="{{dish.id}}">DELETE</button>
@@ -29,19 +29,19 @@
       <br>
       <div class="form-group">
         <label for="dish-desc">Descr.:</label>
-        <input class="form-input w-75"  type="text" id="dish-desc" name="dish-desc">
+        <input class="form-input w-75" type="text" id="dish-desc" name="dish-desc">
       </div>
-        <br>
+      <br>
       <div class="form-group">
         <label for="dish-aller">Allergy:</label>
         <input class="form-input w-75" type="text" id="dish-aller" name="dish-aller">
       </div>
-        <br>
+      <br>
       <div class="form-group">
         <label for="dish-price">Price: $</label>
         <input class="form-input w-75" type="number" id="dish-price" name="dish-price" />
       </div>
-        <br>
+      <br>
       <div class="form-group">
         <button type="submit" class="btn btn-med btn-dark">Create</button>
       </div>
@@ -51,4 +51,3 @@
 </div>
 
 <script src="./js/menu.js"></script>
-
