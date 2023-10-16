@@ -19,6 +19,12 @@ const dishData = [
     allergies: 'None',
     price: 18,
   },
+  {
+    name: 'Mushroom Pie',
+    description: 'Mushroom medley in a savory gravy and flaky crust',
+    allergies: 'Gluten',
+    price: 21,
+  },
 ];
 
 const seedDishes = () => Dish.bulkCreate(dishData);
