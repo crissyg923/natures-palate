@@ -17,7 +17,6 @@ router.get('/', withAuth, async (req, res) => {
    
 
     const orders = orderData.map((order) => order.get({ plain: true }));
-    // return res.json(orders)
     res.render('orders', {
       orders,
       logged_in: req.session.logged_in,
@@ -40,24 +39,32 @@ router.get('/neworder', async (req, res) => {
       });
     });
 
+
+
 router.post('/neworder', async (req, res) => {
   try {
-    const newOrder = await Order.create({
-      allergy: req.body.allergy,
-      status: req.body.status,
-      password: req.body.password,
-    });
+      const { customer_name, allergy, status, dishes } = req.body;
 
-    req.session.save(() => {
-      req.session.logged_in = true;
+      // Create the new order and insert it into the database
+      const newOrder = await Order.create({
+          customer_name,
+          allergy,
+          status
+      });
 
-      res.status(200).json(dbUserData);
-    });
+      
+      for (const id of dishes) {
+          await OrderDish.create({
+              dish_id: dish_id,
+              order_id: newOrder.id
+          });
+      }
+      
+      res.status(200).json({ message: 'Order created successfully' });
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+      console.error(err);
+      res.status(500).json(err);
   }
 });
-
 
 module.exports = router;

@@ -38,8 +38,10 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-const employeeRoutes = require('./controllers/api/employeeRoutes');
-app.use('/api', employeeRoutes);
+// const employeeRoutes = require('./controllers/api/employeeRoutes');
+// app.use('/api', employeeRoutes);
+// const apiroutes = require('./controllers');
+// app.use(apiroutes);
 app.use(routes);
 
 //Using Jimp Package for getting black and white picture with required size at home page

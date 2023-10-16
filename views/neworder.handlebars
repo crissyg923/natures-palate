@@ -1,4 +1,4 @@
-<h1>Dishes</h1>
+{{!-- <h1>Dishes</h1>
 <div class="row">
 {{#each dishes as |dish|}}
 <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
@@ -19,7 +19,28 @@
 </div>
 
 {{/each}}
-</div>
+</div> --}}
 
-<div class="orderbox"></div>
-<button type="submit" class="btn btn-primary submitorder">Submit</button>
+<form class="orderform">
+  <div class="form-group">
+    <label for="customername">Customer Name</label>
+    <input type="text" class="form-control" id="customer_name" aria-describedby="emailHelp" placeholder="Enter Customer Name">
+  </div>
+  <div class="form-group">
+    <label for="allergies">Allergies</label>
+    <input type="text" class="form-control" id="allergies" placeholder="Enter allergies here...">
+  </div>
+    <div class="form-group">
+    <label for="status">Status</label>
+    <input type="text" class="form-control" id="status" placeholder="Enter status here...">
+    </div>
+  {{#each dishes as |dish|}}
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id={{ dish.id }}>
+    <label class="form-check-label" for="exampleCheck1">{{dish.name}}: ${{dish.price}}</label>
+  </div>
+  {{/each}}
+  <button type="submit" class="btn btn-primary" id="submitorder">Submit</button>
+</form>
+
+<script src="./js/orders.js"></script>
