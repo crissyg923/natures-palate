@@ -1,35 +1,36 @@
+{{!-- Renders homepage --}}
 {{#if logged_in}}
 <h1>
   <div class="p-2">Welcome!</div>
 </h1>
 <div class="container">
-<div class="row"> 
-<div class = "col-sm">
-  <img src = "{{ imagePath2 }}">
-</div>
-<div class = "col-sm">
-  <img src = "{{ imagePath1 }}">
-</div>
-<div class = "col-sm">
-  <img src = "{{ imagePath3 }}">
-</div>
-</div>
+  <div class="row">
+    <div class="col-sm">
+      <img src="{{ imagePath2 }}">
+    </div>
+    <div class="col-sm">
+      <img src="{{ imagePath1 }}">
+    </div>
+    <div class="col-sm">
+      <img src="{{ imagePath3 }}">
+    </div>
+  </div>
 </div>
 {{else}}
 <h1>
   <div class="p-2">Welcome! Please sign in.</div>
 </h1>
 <div class="container">
-<div class="row"> 
-<div class = "col-sm">
-  <img src = "{{ imagePath2 }}">
-</div>
-<div class = "col-sm">
-  <img src = "{{ imagePath1 }}">
-</div>
-<div class = "col-sm">
-  <img src = "{{ imagePath3 }}">
-</div>
-</div>
+  <div class="row">
+    <div class="col-sm">
+      <img src="{{ imagePath2 }}">
+    </div>
+    <div class="col-sm">
+      <img src="{{ imagePath1 }}">
+    </div>
+    <div class="col-sm">
+      <img src="{{ imagePath3 }}">
+    </div>
+  </div>
 </div>
 {{/if}}

@@ -1,3 +1,4 @@
+// Routes all api endpoints to correct location
 const router = require('express').Router();
 const orderRoutes = require('./orderRoutes');
 const dishRoutes = require('./dishRoutes');

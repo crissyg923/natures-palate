@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Dish } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Retrieves all dishes
 router.get('/', async (req, res) => {
   try {
     const dishData = await Dish.findAll();

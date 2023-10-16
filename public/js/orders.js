@@ -1,34 +1,45 @@
-// let dishName;
-// let dishPrice;
-// // let dishCheck;
-// let dishAllergies;
-// let orderBox;
+// This file is fetching all of the orders and handling logic on pages
+// associated with orders and order routes.
+document.querySelector('.orderform').addEventListener('submit', async (event) => {
+  event.preventDefault();
 
-// if (window.location.pathname === '/orders/neworder') {
-//   dishName = document.querySelector('.dishname');
-//   dishPrice = document.querySelector('.dish-price');
-// //   dishCheck = document.querySelector('.checkbox-dish');
-//   dishAllergies = document.querySelector('.dishallergy');
-//   orderBox = document.querySelector('.orderbox');
-// }
+  const customerName = document.getElementById('customer_name').value;
+  const allergies = document.getElementById('allergies').value;
+  const status = document.getElementById('status').value;
 
+  const selectedDishes = Array.from(document.querySelectorAll('input[type=checkbox]:checked'))
+      .map(checkbox => checkbox.id);
 
+  const orderData = {
+      customer_name: customerName,
+      allergy: allergies,
+      status: status,
+      dishes: selectedDishes
+  };
 
-// var selectedDishes=[];
+  try {
+      const response = await fetch('/api/orders/neworder', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(orderData),
+          
+      });
+      
+      if (response.ok) {
+          console.log(orderData);
+          document.location.replace('/api/orders');
+      } else {
+          console.log(orderData);
+          console.error('Error creating order');
+      }
+  } catch (error) {
+    
+      console.error('Error:', error);
+  }
+});
 
-// function getOrder() {
-// var getDishes=document.querySelectorAll('checkbox-dish');
-// for (var i=0; i<getDishes.length; i++) 
-// if(!getDishes.checked) {
-//   throw new Error('No items selected!');
-// }
-//   selectedDishes.push(getDishes);
-//   handleOrder(selectedDishes);
-// };
-
-// const handleOrder = (selectedDishes) => {
-//   const newOrder = 
-// }
 
 
 const getOrders = async () => {
@@ -45,8 +56,25 @@ const getOrders = async () => {
   }
 };
 
-//employeeadmin
+const newOrder = async () => {
+  try {
+    const response = await fetch('/api/orders/neworder'); 
+    if (response.ok) {
+      const neworders = await response.json(); 
+      console.log(neworders);
+    } else {
+      console.log('Error:', response.statusText);
+    }
+  } catch (error) {
+    console.log('Error:', error);
+  }
+};
+
 
 document
 .querySelector('#currentorders')
 .addEventListener('click', getOrders);
+
+document
+.querySelector('#neworder')
+.addEventListener('click', newOrder);

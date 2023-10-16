@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Order, Dish, OrderDish} = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Retrieves all current orders
 router.get('/', withAuth, async (req, res) => {
   try {
     const orderData = await Order.findAll({
@@ -17,7 +18,6 @@ router.get('/', withAuth, async (req, res) => {
    
 
     const orders = orderData.map((order) => order.get({ plain: true }));
-    // return res.json(orders)
     res.render('orders', {
       orders,
       logged_in: req.session.logged_in,
@@ -28,7 +28,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-
+// Retrieves dishes to render in form to create a new order
 router.get('/neworder', async (req, res) => {
   const dishData = await Dish.findAll().catch((err) => { 
       res.json(err);
@@ -40,24 +40,30 @@ router.get('/neworder', async (req, res) => {
       });
     });
 
+
+// Creates a new order
 router.post('/neworder', async (req, res) => {
   try {
-    const newOrder = await Order.create({
-      allergy: req.body.allergy,
-      status: req.body.status,
-      password: req.body.password,
-    });
+      const { customer_name, allergy, status, dishes } = req.body;
 
-    req.session.save(() => {
-      req.session.logged_in = true;
+      const newOrder = await Order.create({
+          customer_name,
+          allergy,
+          status
+      });
 
-      res.status(200).json(dbUserData);
-    });
+      for (const dish of dishes) {
+        await OrderDish.create({
+          dish_id: dish.id, 
+          order_id: newOrder.id
+        });
+      }
+      
+      res.status(200).json({ message: 'Order created successfully' });
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+      console.error(err);
+      res.status(500).json(err);
   }
 });
-
 
 module.exports = router;
