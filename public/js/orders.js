@@ -1,4 +1,5 @@
-
+// This file is fetching all of the orders and handling logic on pages
+// associated with orders and order routes.
 document.querySelector('.orderform').addEventListener('submit', async (event) => {
   event.preventDefault();
 
@@ -54,6 +55,7 @@ const getOrders = async () => {
     console.log('Error:', error);
   }
 };
+
 const newOrder = async () => {
   try {
     const response = await fetch('/api/orders/neworder'); 
@@ -67,7 +69,7 @@ const newOrder = async () => {
     console.log('Error:', error);
   }
 };
-//employeeadmin
+
 
 document
 .querySelector('#currentorders')

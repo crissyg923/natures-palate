@@ -53,11 +53,17 @@ router.post('/neworder', async (req, res) => {
       });
 
       
-      for (const id of dishes) {
-          await OrderDish.create({
-              dish_id: dish_id,
-              order_id: newOrder.id
-          });
+      // for (const id of dishes) {
+      //     await OrderDish.create({
+      //         dish_id: dish_id,
+      //         order_id: newOrder.id
+      //     });
+      // }
+      for (const dish of dishes) {
+        await OrderDish.create({
+          dish_id: dish.id, 
+          order_id: newOrder.id
+        });
       }
       
       res.status(200).json({ message: 'Order created successfully' });
