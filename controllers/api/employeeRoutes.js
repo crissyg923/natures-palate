@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Employee } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Creates an employee after they create an account.
 router.post('/', async (req, res) => {
   try {
     console.log(req.body);

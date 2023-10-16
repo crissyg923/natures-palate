@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Order, Dish, OrderDish} = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Retrieves all current orders
 router.get('/', withAuth, async (req, res) => {
   try {
     const orderData = await Order.findAll({
@@ -27,7 +28,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-
+// Retrieves dishes to render in form to create a new order
 router.get('/neworder', async (req, res) => {
   const dishData = await Dish.findAll().catch((err) => { 
       res.json(err);
@@ -40,25 +41,17 @@ router.get('/neworder', async (req, res) => {
     });
 
 
-
+// Creates a new order
 router.post('/neworder', async (req, res) => {
   try {
       const { customer_name, allergy, status, dishes } = req.body;
 
-      // Create the new order and insert it into the database
       const newOrder = await Order.create({
           customer_name,
           allergy,
           status
       });
 
-      
-      // for (const id of dishes) {
-      //     await OrderDish.create({
-      //         dish_id: dish_id,
-      //         order_id: newOrder.id
-      //     });
-      // }
       for (const dish of dishes) {
         await OrderDish.create({
           dish_id: dish.id, 

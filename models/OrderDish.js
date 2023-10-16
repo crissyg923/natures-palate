@@ -1,3 +1,5 @@
+// This model fully instantiates the many to manuy
+// relationship between order and dish.
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');

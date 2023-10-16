@@ -14,8 +14,6 @@ const getUsers = async () => {
     }
   };
 
-  //employeeadmin
-
   document
   .querySelector('#employeeadmin')
   .addEventListener('click', getUsers);

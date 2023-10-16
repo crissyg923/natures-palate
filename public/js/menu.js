@@ -1,3 +1,4 @@
+// Logic handling for creating menu item
 const newFormHandler = async (event) => {
     event.preventDefault();
   
