@@ -7,7 +7,7 @@
   https://github.com/crissyg923/natures-palate
 
   ## Heroku Link
-  https://sheltered-bastion-53112-369471263d1d.herokuapp.com
+  https://mysterious-hollows-20984-6a9045bbe22a.herokuapp.com/
 
   ## Picture of App
   
