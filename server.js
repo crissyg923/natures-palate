@@ -53,7 +53,7 @@ app.use(routes);
   //  .greyscale() 
     .write("./public/pic1.jpg"); 
 }); 
-Jimp.read("pic2.JPG", (err, lenna) => {
+Jimp.read("pic2.jpg", (err, lenna) => {
   if (err) throw err;
   lenna
     .resize(290, 220) 
@@ -61,7 +61,7 @@ Jimp.read("pic2.JPG", (err, lenna) => {
    //  .greyscale() 
      .write("./public/pic2.jpg"); 
  }); 
- Jimp.read("pic3.JPG", (err, lenna) => {
+ Jimp.read("pic3.jpg", (err, lenna) => {
   if (err) throw err;
   lenna
     .resize(290, 220) 
@@ -69,7 +69,7 @@ Jimp.read("pic2.JPG", (err, lenna) => {
    //  .greyscale() 
      .write("./public/pic3.jpg"); 
  }); 
- Jimp.read("pic4.JPG", (err, lenna) => {
+ Jimp.read("pic4.jpg", (err, lenna) => {
   if (err) throw err;
   lenna
     .resize(290, 220) 
